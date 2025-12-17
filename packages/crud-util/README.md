@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>CRUD (@rewiko/util)</h1>
+  <h1>CRUD (@rewiko/crud-util)</h1>
 </div>
 <div align="center">
   <strong>for RESTful APIs built with NestJs</strong>

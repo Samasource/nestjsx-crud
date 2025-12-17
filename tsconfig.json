@@ -18,17 +18,17 @@
       "@rewiko/crud": ["crud/src"],
       "@rewiko/crud-typeorm": ["crud-typeorm/src"],
       "@rewiko/crud-request": ["crud-request/src"],
-      "@rewiko/util": ["util/src"],
+      "@rewiko/crud-util": ["crud-util/src"],
       "@rewiko/crud/*": ["crud/src/*"],
       "@rewiko/crud-typeorm/*": ["crud-typeorm/src/*"],
       "@rewiko/crud-request/*": ["crud-request/src/*"],
-      "@rewiko/util/*": ["util/src/*"]
+      "@rewiko/crud-util/*": ["crud-util/src/*"]
     }
   },
   "references": [
     { "path": "crud" },
     { "path": "crud-typeorm" },
     { "path": "crud-request" },
-    { "path": "util" }
+    { "path": "crud-util" }
   ]
 }

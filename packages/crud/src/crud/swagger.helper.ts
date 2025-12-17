@@ -1,6 +1,6 @@
 import { HttpStatus } from '@nestjs/common';
 import { RequestQueryBuilder } from '@rewiko/crud-request';
-import { isString, objKeys } from '@rewiko/util';
+import { isString, objKeys } from '@rewiko/crud-util';
 import { MergedCrudOptions, ParamsOptions } from '../interfaces';
 import { BaseRouteName } from '../types';
 import { safeRequire } from '../util';
@@ -76,7 +76,9 @@ export class Swagger {
 
   static getExtraModels(target: any): any[] {
     /* istanbul ignore next */
-    return swaggerConst ? R.get(swaggerConst.DECORATORS.API_EXTRA_MODELS, target) || [] : [];
+    return swaggerConst
+      ? R.get(swaggerConst.DECORATORS.API_EXTRA_MODELS, target) || []
+      : [];
   }
 
   static getResponseOk(func: Function): any {

@@ -27,7 +27,7 @@ import {
   isObject,
   isUndefined,
   objKeys,
-} from '@rewiko/util';
+} from '@rewiko/crud-util';
 import { oO } from '@zmotivat0r/o0';
 import { plainToInstance } from 'class-transformer';
 import {

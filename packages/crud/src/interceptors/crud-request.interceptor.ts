@@ -11,7 +11,7 @@ import {
   RequestQueryParser,
   SCondition,
 } from '@rewiko/crud-request';
-import { hasLength, isArrayFull, isFunction, isNil } from '@rewiko/util';
+import { hasLength, isArrayFull, isFunction, isNil } from '@rewiko/crud-util';
 
 import { PARSED_CRUD_REQUEST_KEY } from '../constants';
 import { CrudActions } from '../enums';

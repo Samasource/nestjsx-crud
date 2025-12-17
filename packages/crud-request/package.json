@@ -44,7 +44,7 @@
     "build": "npx tsc -b"
   },
   "dependencies": {
-    "@rewiko/util": "^5.1.12",
+    "@rewiko/crud-util": "^5.1.12",
     "qs": "^6.8.0"
   },
   "gitHead": "4ced7579a2a4474611088fcc5f3c0a7200c73c09"
