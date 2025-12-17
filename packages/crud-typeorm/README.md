@@ -8,14 +8,14 @@
 <br />
 
 <div align="center">
-  <a href="https://travis-ci.org/rewiko/crud">
-    <img src="https://github.com/rewiko/crud/workflows/Tests/badge.svg" alt="Build" />
+  <a href="https://travis-ci.org/Samasource/nestjsx-crud">
+    <img src="https://github.com/Samasource/nestjsx-crud/workflows/Tests/badge.svg" alt="Build" />
   </a>
-  <a href="https://coveralls.io/github/rewiko/crud?branch=master">
-    <img src="https://coveralls.io/repos/github/rewiko/crud/badge.svg" alt="Coverage" />
+  <a href="https://coveralls.io/github/Samasource/nestjsx-crud?branch=master">
+    <img src="https://coveralls.io/repos/github/Samasource/nestjsx-crud/badge.svg" alt="Coverage" />
   </a>
-  <a href="https://github.com/rewiko/crud/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/rewiko/crud.svg" alt="License" />
+  <a href="https://github.com/Samasource/nestjsx-crud/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/Samasource/nestjsx-crud.svg" alt="License" />
   </a>
   <a href="https://www.npmjs.com/package/@sama/nestjsx-crud">
     <img src="https://img.shields.io/npm/v/@sama/nestjsx-crud.svg" alt="npm version" />
@@ -33,13 +33,13 @@
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs welcome" />
   </a>
   <a href="https://github.com/marmelab/awesome-rest#nodejs">
-    <img src="https://raw.githubusercontent.com/rewiko/crud/master/img/awesome-rest.svg?sanitize=true" alt="Awesome REST" />
+    <img src="https://raw.githubusercontent.com/Samasource/nestjsx-crud/master/img/awesome-rest.svg?sanitize=true" alt="Awesome REST" />
   </a>
   <a href="https://github.com/juliandavidmr/awesome-nestjs#components--libraries">
-    <img src="https://raw.githubusercontent.com/rewiko/crud/master/img/awesome-nest.svg?sanitize=true" alt="Awesome Nest" />
+    <img src="https://raw.githubusercontent.com/Samasource/nestjsx-crud/master/img/awesome-nest.svg?sanitize=true" alt="Awesome Nest" />
   </a>
   <a href="https://github.com/nestjs/nest">
-    <img src="https://raw.githubusercontent.com/rewiko/crud/master/img/nest-powered.svg?sanitize=true" alt="Nest Powered" />
+    <img src="https://raw.githubusercontent.com/Samasource/nestjsx-crud/master/img/nest-powered.svg?sanitize=true" alt="Nest Powered" />
   </a>
   <a href="#individuals" alt="Sponsors on Open Collective">
     <img src="https://opencollective.com/nestjsx/backers/badge.svg" />
@@ -52,7 +52,7 @@
 <div align="center">
   <sub>Built by
   <a href="https://twitter.com/MichaelYali">@MichaelYali</a> and
-  <a href="https://github.com/rewiko/crud/graphs/contributors">
+  <a href="https://github.com/Samasource/nestjsx-crud/graphs/contributors">
     Contributors
   </a>
 </div>
@@ -63,7 +63,7 @@ We believe that everyone who's working with NestJs and building some RESTful ser
 
 ## Features
 
-<img align="right" src="https://raw.githubusercontent.com/rewiko/crud/master/img/crud-usage2.png" alt="CRUD usage" />
+<img align="right" src="https://raw.githubusercontent.com/Samasource/nestjsx-crud/master/img/crud-usage2.png" alt="CRUD usage" />
 
 - Super easy to install and start using the full-featured controllers and services :point_right:
 
@@ -91,16 +91,16 @@ npm i @sama/nestjsx-crud-typeorm @nestjs/typeorm typeorm
 
 ## Packages
 
-- [**@sama/nestjsx-crud**](https://www.npmjs.com/package/@sama/nestjsx-crud) - core package which provides `@Crud()` decorator for endpoints generation, global configuration, validation, helper decorators ([docs](https://github.com/rewiko/crud/wiki/Controllers#description))
-- [**@sama/nestjsx-crud-request**](https://www.npmjs.com/package/@sama/nestjsx-crud-request) - request builder/parser package which provides `RequestQueryBuilder` class for a frontend usage and `RequestQueryParser` that is being used internally for handling and validating query/path params on a backend side ([docs](https://github.com/rewiko/crud/wiki/Requests#frontend-usage))
-- [**@sama/nestjsx-crud-typeorm**](https://www.npmjs.com/package/@sama/nestjsx-crud-typeorm) - TypeORM package which provides base `TypeOrmCrudService` with methods for CRUD database operations ([docs](https://github.com/rewiko/crud/wiki/ServiceTypeorm))
+- [**@sama/nestjsx-crud**](https://www.npmjs.com/package/@sama/nestjsx-crud) - core package which provides `@Crud()` decorator for endpoints generation, global configuration, validation, helper decorators ([docs](https://github.com/Samasource/nestjsx-crud/wiki/Controllers#description))
+- [**@sama/nestjsx-crud-request**](https://www.npmjs.com/package/@sama/nestjsx-crud-request) - request builder/parser package which provides `RequestQueryBuilder` class for a frontend usage and `RequestQueryParser` that is being used internally for handling and validating query/path params on a backend side ([docs](https://github.com/Samasource/nestjsx-crud/wiki/Requests#frontend-usage))
+- [**@sama/nestjsx-crud-typeorm**](https://www.npmjs.com/package/@sama/nestjsx-crud-typeorm) - TypeORM package which provides base `TypeOrmCrudService` with methods for CRUD database operations ([docs](https://github.com/Samasource/nestjsx-crud/wiki/ServiceTypeorm))
 
 ## Documentation
 
-- [General Information](https://github.com/rewiko/crud/wiki#why)
-- [CRUD Controllers](https://github.com/rewiko/crud/wiki/Controllers#description)
-- [CRUD ORM Services](https://github.com/rewiko/crud/wiki/Services#description)
-- [Handling Requests](https://github.com/rewiko/crud/wiki/Requests#description)
+- [General Information](https://github.com/Samasource/nestjsx-crud/wiki#why)
+- [CRUD Controllers](https://github.com/Samasource/nestjsx-crud/wiki/Controllers#description)
+- [CRUD ORM Services](https://github.com/Samasource/nestjsx-crud/wiki/Services#description)
+- [Handling Requests](https://github.com/Samasource/nestjsx-crud/wiki/Requests#description)
 
 ## Support
 
@@ -111,7 +111,7 @@ Any support is welcome. At least you can give us a star.
 ### Code Contributors
 
 This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-<a href="https://github.com/rewiko/crud/graphs/contributors"><img src="https://opencollective.com/nestjsx/contributors.svg?width=890&button=false" /></a>
+<a href="https://github.com/Samasource/nestjsx-crud/graphs/contributors"><img src="https://opencollective.com/nestjsx/contributors.svg?width=890&button=false" /></a>
 
 ### Financial Contributors
 

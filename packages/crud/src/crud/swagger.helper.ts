@@ -275,7 +275,7 @@ export class Swagger {
     } = Swagger.getQueryParamsNames();
     const oldVersion = Swagger.getSwaggerVersion() < 4;
     const docsLink = (a: string) =>
-      `<a href="https://github.com/rewiko/crud/wiki/Requests#${a}" target="_blank">Docs</a>`;
+      `<a href="https://github.com/Samasource/nestjsx-crud/wiki/Requests#${a}" target="_blank">Docs</a>`;
 
     const fieldsMetaBase = {
       name: fields,
