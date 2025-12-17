@@ -1,4 +1,4 @@
-import { SerializeOptions } from '@sama/crud';
+import { SerializeOptions } from '@sama/nestjsx-crud';
 import { GetCompanyResponseDto } from './get-company-response.dto';
 
 export const serialize: SerializeOptions = {

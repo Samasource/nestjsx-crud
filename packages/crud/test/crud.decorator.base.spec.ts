@@ -2,7 +2,7 @@ import * as request from 'supertest';
 import { Test } from '@nestjs/testing';
 import { Controller, INestApplication } from '@nestjs/common';
 import { APP_FILTER } from '@nestjs/core';
-import { RequestQueryBuilder } from '@sama/crud-request';
+import { RequestQueryBuilder } from '@sama/nestjsx-crud-request';
 
 import { Crud } from '../src/decorators/crud.decorator';
 import { CreateManyDto } from '../src/interfaces';

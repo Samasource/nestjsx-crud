@@ -1,6 +1,6 @@
 import { Controller } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { Crud } from '@sama/crud';
+import { Crud } from '@sama/nestjsx-crud';
 
 import { Note } from './note.entity';
 import { NotesService } from './notes.service';

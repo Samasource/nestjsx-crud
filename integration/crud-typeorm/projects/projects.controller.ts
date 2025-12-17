@@ -1,7 +1,7 @@
 import { Controller } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 
-import { Crud, OperatorsOptions, CustomOperators } from '@sama/crud';
+import { Crud, OperatorsOptions, CustomOperators } from '@sama/nestjsx-crud';
 
 import { Project } from './project.entity';
 import { ProjectsService } from './projects.service';

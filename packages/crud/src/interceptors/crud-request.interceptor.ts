@@ -10,8 +10,8 @@ import {
   RequestQueryException,
   RequestQueryParser,
   SCondition,
-} from '@sama/crud-request';
-import { hasLength, isArrayFull, isFunction, isNil } from '@sama/crud-util';
+} from '@sama/nestjsx-crud-request';
+import { hasLength, isArrayFull, isFunction, isNil } from '@sama/nestjsx-crud-util';
 
 import { PARSED_CRUD_REQUEST_KEY } from '../constants';
 import { CrudActions } from '../enums';

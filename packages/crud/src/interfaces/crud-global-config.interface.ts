@@ -1,4 +1,4 @@
-import { RequestQueryBuilderOptions } from '@sama/crud-request';
+import { RequestQueryBuilderOptions } from '@sama/nestjsx-crud-request';
 
 import { AuthGlobalOptions } from './auth-options.interface';
 import { OperatorsOptions } from './operators-options.interface';

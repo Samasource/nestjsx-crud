@@ -11,7 +11,7 @@ import {
   isObjectFull,
   isUndefined,
   objKeys,
-} from '@sama/crud-util';
+} from '@sama/nestjsx-crud-util';
 import * as deepmerge from 'deepmerge';
 
 import { CrudActions, CrudValidationGroups } from '../enums';

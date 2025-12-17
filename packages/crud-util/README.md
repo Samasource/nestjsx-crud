@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>CRUD (@sama/crud-util)</h1>
+  <h1>CRUD (@sama/nestjsx-crud-util)</h1>
 </div>
 <div align="center">
   <strong>for RESTful APIs built with NestJs</strong>
@@ -17,11 +17,11 @@
   <a href="https://github.com/rewiko/crud/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/rewiko/crud.svg" alt="License" />
   </a>
-  <a href="https://www.npmjs.com/package/@sama/crud">
-    <img src="https://img.shields.io/npm/v/@sama/crud.svg" alt="npm version" />
+  <a href="https://www.npmjs.com/package/@sama/nestjsx-crud">
+    <img src="https://img.shields.io/npm/v/@sama/nestjsx-crud.svg" alt="npm version" />
   </a>
   <a href="https://www.npmjs.com/org/nestjsx">
-    <img src="https://img.shields.io/npm/dm/@sama/crud.svg" alt="npm downloads" />
+    <img src="https://img.shields.io/npm/dm/@sama/nestjsx-crud.svg" alt="npm downloads" />
   </a>
   <a href="https://npm.packagequality.com/#?package=@nestjsx%2Fcrud">
     <img src="https://npm.packagequality.com/shield/%40nestjsx%2Fcrud.svg" alt="Package Quality" />
@@ -59,7 +59,7 @@
 
 <br />
 
-We believe that everyone who's working with NestJs and building some RESTful services and especially some CRUD functionality will find `@sama/crud` microframework very useful.
+We believe that everyone who's working with NestJs and building some RESTful services and especially some CRUD functionality will find `@sama/nestjsx-crud` microframework very useful.
 
 ## Features
 
@@ -85,9 +85,9 @@ We believe that everyone who's working with NestJs and building some RESTful ser
 
 ## Packages
 
-- [**@sama/crud**](https://www.npmjs.com/package/@sama/crud) - core package which provides `@Crud()` decorator for endpoints generation, global configuration, validation, helper decorators ([docs](https://github.com/rewiko/crud/wiki/Controllers#description))
-- [**@sama/crud-request**](https://www.npmjs.com/package/@sama/crud-request) - request builder/parser package which provides `RequestQueryBuilder` class for a frontend usage and `RequestQueryParser` that is being used internally for handling and validating query/path params on a backend side ([docs](https://github.com/rewiko/crud/wiki/Requests#frontend-usage))
-- [**@sama/crud-typeorm**](https://www.npmjs.com/package/@sama/crud-typeorm) - TypeORM package which provides base `TypeOrmCrudService` with methods for CRUD database operations ([docs](https://github.com/rewiko/crud/wiki/ServiceTypeorm))
+- [**@sama/nestjsx-crud**](https://www.npmjs.com/package/@sama/nestjsx-crud) - core package which provides `@Crud()` decorator for endpoints generation, global configuration, validation, helper decorators ([docs](https://github.com/rewiko/crud/wiki/Controllers#description))
+- [**@sama/nestjsx-crud-request**](https://www.npmjs.com/package/@sama/nestjsx-crud-request) - request builder/parser package which provides `RequestQueryBuilder` class for a frontend usage and `RequestQueryParser` that is being used internally for handling and validating query/path params on a backend side ([docs](https://github.com/rewiko/crud/wiki/Requests#frontend-usage))
+- [**@sama/nestjsx-crud-typeorm**](https://www.npmjs.com/package/@sama/nestjsx-crud-typeorm) - TypeORM package which provides base `TypeOrmCrudService` with methods for CRUD database operations ([docs](https://github.com/rewiko/crud/wiki/ServiceTypeorm))
 
 ## Documentation
 

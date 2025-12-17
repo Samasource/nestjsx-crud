@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { TypeOrmCrudService } from '@sama/crud-typeorm';
+import { TypeOrmCrudService } from '@sama/nestjsx-crud-typeorm';
 
 import { Company } from './company.entity';
 
