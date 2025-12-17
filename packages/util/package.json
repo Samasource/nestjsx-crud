@@ -1,5 +1,5 @@
 {
-  "name": "@rewiko/util",
+  "name": "@sama/util",
   "description": "NestJs CRUD for RESTful APIs - util",
   "version": "5.1.12",
   "license": "MIT",
@@ -10,10 +10,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/rewiko/crud.git"
+    "url": "https://github.com/Samasource/nestjsx-crud.git"
   },
   "bugs": {
-    "url": "https://github.com/rewiko/crud/issues"
+    "url": "https://github.com/Samasource/nestjsx-crud/issues"
   },
   "keywords": [
     "typescript",
