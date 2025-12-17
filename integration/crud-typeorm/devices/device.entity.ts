@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 import { IsOptional, IsString, IsUUID } from 'class-validator';
-import { CrudValidationGroups } from '@rewiko/crud';
+import { CrudValidationGroups } from '@sama/crud';
 
 const { CREATE, UPDATE } = CrudValidationGroups;
 

@@ -1,5 +1,5 @@
 {
-  "name": "@sama/util",
+  "name": "@sama/crud-util",
   "description": "NestJs CRUD for RESTful APIs - util",
   "version": "5.1.12",
   "license": "MIT",

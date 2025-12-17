@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import { CrudConfigService } from '@rewiko/crud';
+import { CrudConfigService } from '@sama/crud';
 import { USER_REQUEST_KEY } from './constants';
 
 // Important: load config before (!!!) you import AppModule
@@ -23,8 +23,8 @@ async function bootstrap() {
   app.useGlobalFilters(new HttpExceptionFilter());
 
   const options = new DocumentBuilder()
-    .setTitle('@rewiko/crud-typeorm')
-    .setDescription('@rewiko/crud-typeorm')
+    .setTitle('@sama/crud-typeorm')
+    .setDescription('@sama/crud-typeorm')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, options);

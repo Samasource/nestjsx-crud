@@ -36,8 +36,8 @@
     "build": "npx tsc -b"
   },
   "dependencies": {
-    "@rewiko/crud-request": "^5.1.12",
-    "@rewiko/crud-util": "^5.1.12",
+    "@sama/crud-request": "^5.1.12",
+    "@sama/crud-util": "^5.1.12",
     "deepmerge": "^3.2.0",
     "pluralize": "^8.0.0"
   },

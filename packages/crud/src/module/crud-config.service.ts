@@ -1,5 +1,5 @@
-import { RequestQueryBuilder } from '@rewiko/crud-request';
-import { isObjectFull } from '@rewiko/crud-util';
+import { RequestQueryBuilder } from '@sama/crud-request';
+import { isObjectFull } from '@sama/crud-util';
 import * as deepmerge from 'deepmerge';
 
 import { CrudGlobalConfig } from '../interfaces';

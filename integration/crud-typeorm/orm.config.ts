@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { isNil } from '@rewiko/crud-util';
+import { isNil } from '@sama/crud-util';
 
 const type = (process.env.TYPEORM_CONNECTION as any) || 'postgres';
 

@@ -5,7 +5,7 @@ import {
   isObject,
   isString,
   isUndefined,
-} from '@rewiko/crud-util';
+} from '@sama/crud-util';
 import { stringify } from 'qs';
 
 import {

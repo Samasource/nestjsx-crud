@@ -10,7 +10,7 @@ import {
   isStringFull,
   ObjectLiteral,
   objKeys,
-} from '@rewiko/crud-util';
+} from '@sama/crud-util';
 
 import { RequestQueryException } from './exceptions';
 import {

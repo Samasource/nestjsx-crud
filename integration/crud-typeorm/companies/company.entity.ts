@@ -1,4 +1,4 @@
-import { CrudValidationGroups } from '@rewiko/crud';
+import { CrudValidationGroups } from '@sama/crud';
 import { Entity, Column, OneToMany, PrimaryGeneratedColumn, DeleteDateColumn } from 'typeorm';
 import {
   IsOptional,

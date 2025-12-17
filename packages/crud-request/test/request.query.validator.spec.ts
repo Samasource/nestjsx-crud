@@ -1,4 +1,4 @@
-import { RequestQueryException } from '@rewiko/crud-request';
+import { RequestQueryException } from '@sama/crud-request';
 import { validateComparisonOperator, validateUUID } from '../src/request-query.validator';
 
 describe('#request-query', () => {

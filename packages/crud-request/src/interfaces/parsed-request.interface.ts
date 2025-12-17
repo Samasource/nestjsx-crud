@@ -1,4 +1,4 @@
-import { ObjectLiteral } from '@rewiko/crud-util';
+import { ObjectLiteral } from '@sama/crud-util';
 import { QueryFields, QueryFilter, QueryJoin, QuerySort, SCondition } from '../types';
 
 export interface ParsedRequestParams {

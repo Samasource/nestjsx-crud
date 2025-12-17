@@ -1,4 +1,4 @@
-import { ClassType } from '@rewiko/crud-util';
+import { ClassType } from '@sama/crud-util';
 import { plainToClass } from 'class-transformer';
 import { MigrationInterface, Repository, QueryRunner } from 'typeorm';
 import { Company } from './companies';

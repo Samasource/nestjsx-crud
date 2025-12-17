@@ -10,8 +10,8 @@ import {
   RequestQueryException,
   RequestQueryParser,
   SCondition,
-} from '@rewiko/crud-request';
-import { hasLength, isArrayFull, isFunction, isNil } from '@rewiko/crud-util';
+} from '@sama/crud-request';
+import { hasLength, isArrayFull, isFunction, isNil } from '@sama/crud-util';
 
 import { PARSED_CRUD_REQUEST_KEY } from '../constants';
 import { CrudActions } from '../enums';

@@ -7,7 +7,7 @@ import {
   isStringFull,
   isUndefined,
   objKeys,
-} from '@rewiko/crud-util';
+} from '@sama/crud-util';
 
 import { RequestQueryException } from './exceptions';
 import { CustomOperators, ParamOption, ParamsOptions } from './interfaces';
