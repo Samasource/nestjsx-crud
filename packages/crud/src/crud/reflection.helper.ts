@@ -1,12 +1,5 @@
 import { RouteParamtypes } from '@nestjs/common/enums/route-paramtypes.enum';
-import {
-  CUSTOM_ROUTE_AGRS_METADATA,
-  INTERCEPTORS_METADATA,
-  METHOD_METADATA,
-  PARAMTYPES_METADATA,
-  PATH_METADATA,
-  ROUTE_ARGS_METADATA,
-} from '@nestjs/common/constants';
+import * as CONSTANTS from '@nestjs/common/constants';
 import { ArgumentsHost } from '@nestjs/common';
 import { isFunction } from '@sama/nestjsx-crud-util';
 
@@ -22,6 +15,14 @@ import {
 } from '../constants';
 import { CrudActions } from '../enums';
 
+const {
+  CUSTOM_ROUTE_AGRS_METADATA = CONSTANTS['CUSTOM_ROUTE_ARGS_METADATA'],
+  INTERCEPTORS_METADATA,
+  METHOD_METADATA,
+  PARAMTYPES_METADATA,
+  PATH_METADATA,
+  ROUTE_ARGS_METADATA,
+} = CONSTANTS;
 export class R {
   static set(
     metadataKey: any,
