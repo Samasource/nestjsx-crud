@@ -1,0 +1,19 @@
+#!/bin/bash
+set -euo pipefail
+
+# Delete all preview versions for a given PR from Gemfury
+#
+# Usage:
+#  $ fury-delete-preview pull_request
+#   * pull_request_id: Pull request number
+
+PULL_REQUEST_NUMBER="${1?ERROR: missing pull request number}"
+
+echo "Deleting preview packages for PR #${PULL_REQUEST_NUMBER}"
+
+for PKG_JSON in packages/*/package.json; do
+    PKG_NAME=$(jq -r '.name' "$PKG_JSON")
+
+    echo "Deleting preview for package: ${PKG_NAME}"
+    fury-delete-pr "${PKG_NAME}" "${PULL_REQUEST_NUMBER}" || true
+done

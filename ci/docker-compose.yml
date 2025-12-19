@@ -5,7 +5,7 @@ services:
     # TypeORM fails with Postgres v.12
     image: postgres:11.5
     ports:
-      - 5455:5432
+      - 5432
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
@@ -14,14 +14,15 @@ services:
   mysql:
     image: mysql:5.7
     ports:
-      - 3316:3306
+      - 3306
     environment:
       MYSQL_ROOT_PASSWORD: nestjsx_crud
       MYSQL_DATABASE: nestjsx_crud
       MYSQL_USER: nestjsx_crud
       MYSQL_PASSWORD: nestjsx_crud
+    command: --default-authentication-plugin=mysql_native_password
 
   redis:
     image: redis:alpine
     ports:
-      - 6399:6379
+      - 6379
