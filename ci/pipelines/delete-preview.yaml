@@ -20,7 +20,7 @@ steps:
   clone:
     type: git-clone
     repo: ${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}
-    revision: main
+    revision: master
     stage: prepare
 
   delete_preview:
