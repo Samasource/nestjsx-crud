@@ -1,0 +1,72 @@
+version: '1.0'
+
+indicators:
+  - &INFRA_IMAGE 596059236576.dkr.ecr.us-east-1.amazonaws.com/samasource/factotum-slim:stable
+
+stages:
+  - validate
+  - prepare
+  - build
+  - test
+  - publish
+
+steps:
+  check_vars:
+    image: *INFRA_IMAGE
+    working_directory: ${{CF_REPO_NAME}}
+    commands:
+      - chk-var CF_REPO_OWNER CF_REPO_NAME CF_BRANCH
+      - chk-var GEMFURY_PUSH_TOKEN NPM_REGISTRY_URL
+    stage: validate
+
+  clone:
+    type: git-clone
+    repo: ${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}
+    revision: '${{CF_BRANCH}}'
+    stage: prepare
+
+  export_vars:
+    image: *INFRA_IMAGE
+    working_directory: ${{CF_REPO_NAME}}
+    commands:
+      - export PATH=/codefresh/volume/bin:$PATH; cf_export PATH
+      - export NODE_VERSION=$(get-major-version $(cat .nvmrc))
+      - cf_export BASE_IMAGE=node:${NODE_VERSION}
+    stage: prepare
+
+  install:
+    image: ${{BASE_IMAGE}}
+    working_directory: ${{CF_REPO_NAME}}
+    commands:
+      - configure-git-user
+      - cp ci/.npmrc .npmrc
+      - yarn install
+      - yarn bootstrap
+    stage: prepare
+
+  build:
+    image: ${{BASE_IMAGE}}
+    working_directory: ${{CF_REPO_NAME}}
+    commands:
+      - yarn clean
+      - yarn build
+    stage: build
+
+  test:
+    image: ${{BASE_IMAGE}}
+    working_directory: ${{CF_REPO_NAME}}
+    services:
+      composition: ${{CF_REPO_NAME}}/ci/docker-compose.yml
+    commands:
+      - sleep 15 && yarn test:coverage
+    stage: test
+
+  publish:
+    image: ${{BASE_IMAGE}}
+    working_directory: ${{CF_REPO_NAME}}
+    commands:
+      - install-git-ssh-key
+      - configure-git-user
+      - configure-git-ssh-url
+      - npx lerna publish --registry=${NPM_REGISTRY_URL} --conventional-commits --force-publish --yes
+    stage: publish
