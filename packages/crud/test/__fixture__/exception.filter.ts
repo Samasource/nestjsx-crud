@@ -1,5 +1,5 @@
 import { ArgumentsHost, Catch, ExceptionFilter, HttpStatus } from '@nestjs/common';
-import { RequestQueryException } from '@rewiko/crud-request';
+import { RequestQueryException } from '@sama/nestjsx-crud-request';
 import { Response } from 'express';
 
 @Catch(RequestQueryException)

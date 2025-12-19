@@ -1,4 +1,4 @@
-import { ObjectLiteral } from '@rewiko/util';
+import { ObjectLiteral } from '@sama/nestjsx-crud-util';
 import { QueryFields, QueryFilter, QueryJoin, QuerySort, SCondition } from '../types';
 
 export interface ParsedRequestParams {

@@ -7,7 +7,7 @@ import {
   isStringFull,
   isUndefined,
   objKeys,
-} from '@rewiko/util';
+} from '@sama/nestjsx-crud-util';
 
 import { RequestQueryException } from './exceptions';
 import { CustomOperators, ParamOption, ParamsOptions } from './interfaces';

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ParsedRequestParams } from '@rewiko/crud-request';
+import { ParsedRequestParams } from '@sama/nestjsx-crud-request';
 import { CrudRequestOptions } from '../../../src/interfaces';
 
 import { CreateManyDto, CrudRequest } from '../../../src/interfaces';

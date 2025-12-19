@@ -1,7 +1,7 @@
 import {
   QueryFilter,
   SCondition,
-} from '@rewiko/crud-request/lib/types/request-query.types';
+} from '@sama/nestjsx-crud-request/lib/types/request-query.types';
 
 export type QueryFilterFunction = (
   search?: SCondition,

@@ -15,20 +15,20 @@
     "composite": true,
     "baseUrl": "./packages",
     "paths": {
-      "@rewiko/crud": ["crud/src"],
-      "@rewiko/crud-typeorm": ["crud-typeorm/src"],
-      "@rewiko/crud-request": ["crud-request/src"],
-      "@rewiko/util": ["util/src"],
-      "@rewiko/crud/*": ["crud/src/*"],
-      "@rewiko/crud-typeorm/*": ["crud-typeorm/src/*"],
-      "@rewiko/crud-request/*": ["crud-request/src/*"],
-      "@rewiko/util/*": ["util/src/*"]
+      "@sama/nestjsx-crud": ["crud/src"],
+      "@sama/nestjsx-crud-typeorm": ["crud-typeorm/src"],
+      "@sama/nestjsx-crud-request": ["crud-request/src"],
+      "@sama/nestjsx-crud-util": ["crud-util/src"],
+      "@sama/nestjsx-crud/*": ["crud/src/*"],
+      "@sama/nestjsx-crud-typeorm/*": ["crud-typeorm/src/*"],
+      "@sama/nestjsx-crud-request/*": ["crud-request/src/*"],
+      "@sama/nestjsx-crud-util/*": ["crud-util/src/*"]
     }
   },
   "references": [
     { "path": "crud" },
     { "path": "crud-typeorm" },
     { "path": "crud-request" },
-    { "path": "util" }
+    { "path": "crud-util" }
   ]
 }

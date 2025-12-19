@@ -21,7 +21,7 @@ import {
   isTrue,
   isUndefined,
   isValue,
-} from '../src/';
+} from '../src';
 
 describe('#util', () => {
   describe('#isUndefined', () => {
