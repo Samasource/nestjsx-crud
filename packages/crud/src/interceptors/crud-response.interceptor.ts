@@ -27,8 +27,10 @@ const actionToDtoNameMap: {
 };
 
 @Injectable()
-export class CrudResponseInterceptor extends CrudBaseInterceptor
-  implements NestInterceptor {
+export class CrudResponseInterceptor
+  extends CrudBaseInterceptor
+  implements NestInterceptor
+{
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     return next.handle().pipe(map((data) => this.serialize(context, data)));
   }

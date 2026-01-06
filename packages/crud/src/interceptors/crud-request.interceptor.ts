@@ -20,8 +20,10 @@ import { QueryFilterFunction } from '../types';
 import { CrudBaseInterceptor } from './crud-base.interceptor';
 
 @Injectable()
-export class CrudRequestInterceptor extends CrudBaseInterceptor
-  implements NestInterceptor {
+export class CrudRequestInterceptor
+  extends CrudBaseInterceptor
+  implements NestInterceptor
+{
   intercept(context: ExecutionContext, next: CallHandler) {
     const req = context.switchToHttp().getRequest();
 

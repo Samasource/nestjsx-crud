@@ -481,9 +481,10 @@ export class TypeOrmCrudService<T> extends CrudService<T, DeepPartial<T>> {
         );
   }
 
-  protected getEntityColumns(
-    entityMetadata: EntityMetadata,
-  ): { columns: string[]; primaryColumns: string[] } {
+  protected getEntityColumns(entityMetadata: EntityMetadata): {
+    columns: string[];
+    primaryColumns: string[];
+  } {
     const columns =
       entityMetadata.columns.map((prop) => prop.propertyPath) ||
       /* istanbul ignore next */ [];
@@ -962,8 +963,8 @@ export class TypeOrmCrudService<T> extends CrudService<T, DeepPartial<T>> {
     return query.sort && query.sort.length
       ? this.mapSort(query.sort)
       : options.sort && options.sort.length
-      ? this.mapSort(options.sort)
-      : {};
+        ? this.mapSort(options.sort)
+        : {};
   }
 
   protected getFieldWithAlias(field: string, sort: boolean = false) {
