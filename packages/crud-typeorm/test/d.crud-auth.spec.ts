@@ -31,7 +31,9 @@ describe('#crud-typeorm', () => {
 
       async canActivate(ctx: ExecutionContext): Promise<boolean> {
         const req = ctx.switchToHttp().getRequest();
-        req[USER_REQUEST_KEY] = await this.usersService.findOne(1);
+        req[USER_REQUEST_KEY] = await this.usersService.findOneBy({
+          id: 1,
+        });
 
         return true;
       }
