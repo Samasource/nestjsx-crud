@@ -79,7 +79,10 @@ export class TypeOrmCrudBaseService<T> extends TypeOrmCrudService<T> {
    */
   private async ensureEntityExistsOrFail(request: CrudRequest) {
     const id = this.getParameter(request, 'id');
-    // const entityExists = await this.repo.exist({
+    // NOTE: Requires upgrading to TypeORM > v0.3.18 to use `exists` method
+    // const entityExists = await this.repo.exists({
+    //   where: { id },
+    // } as FindManyOptions<T>);
     const entityExists = !!(await this.repo.findOne({
       where: { id },
     }));
