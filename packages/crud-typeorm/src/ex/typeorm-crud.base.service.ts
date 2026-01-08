@@ -66,6 +66,7 @@ export class TypeOrmCrudBaseService<T> extends TypeOrmCrudService<T> {
     return _.merge({}, request, {
       options: {
         routes: {
+          createOneBase: { returnShallow: true },
           updateOneBase: { returnShallow: true },
           replaceOneBase: { returnShallow: true },
         },
@@ -78,16 +79,8 @@ export class TypeOrmCrudBaseService<T> extends TypeOrmCrudService<T> {
    * @param request
    */
   private async ensureEntityExistsOrFail(request: CrudRequest) {
-    const id = this.getParameter(request, 'id');
-    // NOTE: Requires upgrading to TypeORM > v0.3.18 to use `exists` method
-    // const entityExists = await this.repo.exists({
-    //   where: { id },
-    // } as FindManyOptions<T>);
-    const entityExists = !!(await this.repo.findOne({
-      where: { id },
-    }));
-
-    if (!entityExists) {
+    const entity = await this.getOne(request);
+    if (!entity) {
       this.throwNotFoundException();
     }
   }
