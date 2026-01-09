@@ -75,7 +75,7 @@ steps:
     commands:
       - npx lerna publish prerelease --registry=${NPM_REGISTRY_URL} --preid=${PRERELEASE_ID} --dist-tag=pr --no-git-tag-version --no-push --force-publish --yes
       - export PREVIEW_VERSION=$(node -p "require('./lerna.json').version")
-      - export PACKAGES=$(npx lerna list | sed "s/$/@${PREVIEW_VERSION}/" | tr '\n' ' '); cf_export PACKAGES
+      - export PACKAGES=$(npx lerna list | awk -v ver="${PREVIEW_VERSION}" '{printf "%s@%s<br>", $0, ver}'); cf_export PACKAGES
     stage: publish
 
   comment_pr:
