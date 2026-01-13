@@ -1,5 +1,5 @@
 import { ValidationPipe } from '@nestjs/common';
-import { isFalse, isNil } from '@rewiko/util';
+import { isFalse, isNil } from '@sama/nestjsx-crud-util';
 import { CrudValidationGroups } from '../enums';
 import { CreateManyDto, CrudOptions, MergedCrudOptions } from '../interfaces';
 import { safeRequire } from '../util';

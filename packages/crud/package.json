@@ -1,23 +1,19 @@
 {
-  "name": "@rewiko/crud",
+  "name": "@sama/nestjsx-crud",
   "description": "NestJs CRUD for RESTful APIs",
   "version": "5.1.12",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "files": [
     "lib"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/rewiko/crud.git"
+    "url": "https://github.com/Samasource/nestjsx-crud.git"
   },
   "bugs": {
-    "url": "https://github.com/rewiko/crud/issues"
+    "url": "https://github.com/Samasource/nestjsx-crud/issues"
   },
   "keywords": [
     "typescript",
@@ -40,8 +36,8 @@
     "build": "npx tsc -b"
   },
   "dependencies": {
-    "@rewiko/crud-request": "^5.1.12",
-    "@rewiko/util": "^5.1.12",
+    "@sama/nestjsx-crud-request": "^5.1.12",
+    "@sama/nestjsx-crud-util": "^5.1.12",
     "deepmerge": "^3.2.0",
     "pluralize": "^8.0.0"
   },

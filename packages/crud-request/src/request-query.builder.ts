@@ -5,7 +5,7 @@ import {
   isObject,
   isString,
   isUndefined,
-} from '@rewiko/util';
+} from '@sama/nestjsx-crud-util';
 import { stringify } from 'qs';
 
 import {

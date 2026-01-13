@@ -1,6 +1,6 @@
 import { HttpStatus } from '@nestjs/common';
-import { RequestQueryBuilder } from '@rewiko/crud-request';
-import { isString, objKeys } from '@rewiko/util';
+import { RequestQueryBuilder } from '@sama/nestjsx-crud-request';
+import { isString, objKeys } from '@sama/nestjsx-crud-util';
 import { MergedCrudOptions, ParamsOptions } from '../interfaces';
 import { BaseRouteName } from '../types';
 import { safeRequire } from '../util';
@@ -76,7 +76,9 @@ export class Swagger {
 
   static getExtraModels(target: any): any[] {
     /* istanbul ignore next */
-    return swaggerConst ? R.get(swaggerConst.DECORATORS.API_EXTRA_MODELS, target) || [] : [];
+    return swaggerConst
+      ? R.get(swaggerConst.DECORATORS.API_EXTRA_MODELS, target) || []
+      : [];
   }
 
   static getResponseOk(func: Function): any {
@@ -273,7 +275,7 @@ export class Swagger {
     } = Swagger.getQueryParamsNames();
     const oldVersion = Swagger.getSwaggerVersion() < 4;
     const docsLink = (a: string) =>
-      `<a href="https://github.com/rewiko/crud/wiki/Requests#${a}" target="_blank">Docs</a>`;
+      `<a href="https://github.com/Samasource/nestjsx-crud/wiki/Requests#${a}" target="_blank">Docs</a>`;
 
     const fieldsMetaBase = {
       name: fields,
