@@ -1,0 +1,31 @@
+version: '1.0'
+
+indicators:
+  - &INFRA_IMAGE 596059236576.dkr.ecr.us-east-1.amazonaws.com/samasource/factotum-slim:stable
+
+stages:
+  - validate
+  - prepare
+  - delete
+
+steps:
+  check_vars:
+    image: *INFRA_IMAGE
+    working_directory: ${{CF_REPO_NAME}}
+    commands:
+      - chk-var CF_REPO_OWNER CF_REPO_NAME CF_PULL_REQUEST_NUMBER
+      - chk-var GEMFURY_PUSH_TOKEN
+    stage: validate
+
+  clone:
+    type: git-clone
+    repo: ${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}
+    revision: master
+    stage: prepare
+
+  delete_preview:
+    image: *INFRA_IMAGE
+    working_directory: ${{CF_REPO_NAME}}
+    commands:
+      - fury-delete-preview ${{CF_PULL_REQUEST_NUMBER}}
+    stage: delete

@@ -1,0 +1,89 @@
+version: '1.0'
+
+indicators:
+  - &INFRA_IMAGE 596059236576.dkr.ecr.us-east-1.amazonaws.com/samasource/factotum-slim:stable
+
+stages:
+  - validate
+  - prepare
+  - build
+  - test
+  - publish
+  - notify
+
+steps:
+  check_vars:
+    image: *INFRA_IMAGE
+    working_directory: ${{CF_REPO_NAME}}
+    commands:
+      - chk-var CF_REPO_OWNER CF_REPO_NAME CF_BRANCH CF_PULL_REQUEST_NUMBER
+      - chk-var GEMFURY_PUSH_TOKEN NPM_REGISTRY_URL
+    stage: validate
+
+  clone:
+    type: git-clone
+    repo: ${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}
+    revision: '${{CF_BRANCH}}'
+    stage: prepare
+
+  export_vars:
+    image: *INFRA_IMAGE
+    working_directory: ${{CF_REPO_NAME}}
+    commands:
+      - export PATH=/codefresh/volume/bin:$PATH; cf_export PATH
+      - export NODE_VERSION=$(get-major-version $(cat .nvmrc))
+      - cf_export BASE_IMAGE=node:${NODE_VERSION}
+      - cf_export PRERELEASE_ID="PR-${CF_PULL_REQUEST_NUMBER}-$(date +%s)"
+    stage: prepare
+
+  install:
+    image: ${{BASE_IMAGE}}
+    working_directory: ${{CF_REPO_NAME}}
+    commands:
+      - cp ci/.npmrc .npmrc
+      - yarn install
+      - yarn bootstrap
+    stage: prepare
+
+  build:
+    image: ${{BASE_IMAGE}}
+    working_directory: ${{CF_REPO_NAME}}
+    commands:
+      - yarn clean
+      - yarn build
+    stage: build
+
+  test:
+    image: ${{BASE_IMAGE}}
+    working_directory: ${{CF_REPO_NAME}}
+    services:
+      composition: ${{CF_REPO_NAME}}/ci/docker-compose.yml
+    commands:
+      - sleep 15 && yarn test:coverage
+    stage: test
+
+  cleanup_preview:
+    image: *INFRA_IMAGE
+    working_directory: ${{CF_REPO_NAME}}
+    commands:
+      - fury-delete-preview ${{CF_PULL_REQUEST_NUMBER}}
+    stage: publish
+
+  publish:
+    image: ${{BASE_IMAGE}}
+    working_directory: ${{CF_REPO_NAME}}
+    commands:
+      - npx lerna publish prerelease --registry=${NPM_REGISTRY_URL} --preid=${PRERELEASE_ID} --dist-tag=pr --no-git-tag-version --no-push --force-publish --yes
+      - export PREVIEW_VERSION=$(node -p "require('./lerna.json').version")
+      - export PACKAGES=$(npx lerna list | awk -v ver="${PREVIEW_VERSION}" '{printf "%s@%s<br>", $0, ver}'); cf_export PACKAGES
+    stage: publish
+
+  comment_pr:
+    type: kostis-codefresh/github-pr-comment
+    fail_fast: false
+    arguments:
+      PR_COMMENT_TEXT: |-
+        **Preview packages deployed**
+        ${{PACKAGES}}
+      GIT_PROVIDER_NAME: github-1
+    stage: notify
