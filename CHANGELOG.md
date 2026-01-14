@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0](https://github.com/Samasource/nestjsx-crud/compare/v6.0.0...v6.1.0) (2026-01-14)
+
+
+### Bug Fixes
+
+* **crud:** Fix CrudEx custom decorator (removed CrudOptionsEx) ([1a2df57](https://github.com/Samasource/nestjsx-crud/commit/1a2df578157a7ba2821be7a65f5a0b501b51e8b7))
+* **crud-typeorm:** TypeOrmCrudBaseService: Backport additional changes from accounts-backend be ([b46e908](https://github.com/Samasource/nestjsx-crud/commit/b46e9083d672f12dda06b63d1c0356ddcb23ca00))
+* **deps:** bump @types/node version ([4016c48](https://github.com/Samasource/nestjsx-crud/commit/4016c48a1ba246dac1677eafd57eecc48d846035))
+* **deps:** bump prettier version ([06509c2](https://github.com/Samasource/nestjsx-crud/commit/06509c22871f6cf3c390e6d23aae8be92757183e))
+* **deps:** bump typescript version ([2fad519](https://github.com/Samasource/nestjsx-crud/commit/2fad5196ee44d26862e29ec1f00ba844d6a3c179))
+
+
+### Features
+
+* **crud:** Add CrudEx decorator ([24f26b3](https://github.com/Samasource/nestjsx-crud/commit/24f26b3ac0486ff113107972adcbc7ba95b7879d))
+* **crud:** Add CrudOptionsEx + CrudRequestHelper ([525a502](https://github.com/Samasource/nestjsx-crud/commit/525a502c240dc3e21dcffbb1eb67f03b153409f3))
+* **crud-typeorm:** Add TypeOrmCrudBaseService that improves TypeOrmCrudService from original repo ([6f350bf](https://github.com/Samasource/nestjsx-crud/commit/6f350bf32b81cb1559d04f55449ae5d1fb057c84))
+
+
+
+
+
 # 6.0.0 (2026-01-13)
 
 

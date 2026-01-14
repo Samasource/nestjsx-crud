@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0](https://github.com/Samasource/nestjsx-crud/compare/v6.0.0...v6.1.0) (2026-01-14)
+
+
+### Bug Fixes
+
+* **crud-typeorm:** TypeOrmCrudBaseService: Backport additional changes from accounts-backend be ([b46e908](https://github.com/Samasource/nestjsx-crud/commit/b46e9083d672f12dda06b63d1c0356ddcb23ca00))
+* **deps:** bump prettier version ([06509c2](https://github.com/Samasource/nestjsx-crud/commit/06509c22871f6cf3c390e6d23aae8be92757183e))
+
+
+### Features
+
+* **crud-typeorm:** Add TypeOrmCrudBaseService that improves TypeOrmCrudService from original repo ([6f350bf](https://github.com/Samasource/nestjsx-crud/commit/6f350bf32b81cb1559d04f55449ae5d1fb057c84))
+
+
+
+
+
 # 6.0.0 (2026-01-13)
 
 
