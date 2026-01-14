@@ -28,7 +28,10 @@ export class CrudRoutesFactory {
   protected options: MergedCrudOptions;
   protected swaggerModels: any = {};
 
-  constructor(protected target: any, options: CrudOptions) {
+  constructor(
+    protected target: any,
+    options: CrudOptions,
+  ) {
     this.options = options;
     this.create();
   }
@@ -98,8 +101,8 @@ export class CrudRoutesFactory {
     this.options.params = isObjectFull(this.options.params)
       ? this.options.params
       : isObjectFull(CrudConfigService.config.params)
-      ? CrudConfigService.config.params
-      : {};
+        ? CrudConfigService.config.params
+        : {};
     const hasPrimary = this.getPrimaryParams().length > 0;
     if (!hasPrimary) {
       this.options.params.id = {
@@ -123,10 +126,10 @@ export class CrudRoutesFactory {
     this.options.serialize.getMany = isFalse(this.options.serialize.getMany)
       ? false
       : this.options.serialize.getMany
-      ? this.options.serialize.getMany
-      : isFalse(this.options.serialize.get)
-      ? /* istanbul ignore next */ false
-      : SerializeHelper.createGetManyDto(this.options.serialize.get, this.modelName);
+        ? this.options.serialize.getMany
+        : isFalse(this.options.serialize.get)
+          ? /* istanbul ignore next */ false
+          : SerializeHelper.createGetManyDto(this.options.serialize.get, this.modelName);
     this.options.serialize.create = isFalse(this.options.serialize.create)
       ? false
       : this.options.serialize.create || this.modelType;

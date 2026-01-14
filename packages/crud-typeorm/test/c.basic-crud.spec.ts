@@ -604,16 +604,11 @@ describe('#crud-typeorm', () => {
       });
       it('should not return cached value while patching', async () => {
         const dto = { name: { first: 'nameHasBeenPatched' } };
-        const updateUser = () =>
-          request(server)
-            .patch('/companies/2/users/17')
-            .send(dto);
+        const updateUser = () => request(server).patch('/companies/2/users/17').send(dto);
 
         const query = qb.select(['name.first']).query();
         const getUserCachedAfterUpdate = () =>
-          request(server)
-            .get('/companies/2/users/17')
-            .query(query);
+          request(server).get('/companies/2/users/17').query(query);
 
         const resBeforeUpdateGetUser = await getUserCachedAfterUpdate().expect(200);
         expect(resBeforeUpdateGetUser.body.name.first).toBe(null);
@@ -626,16 +621,11 @@ describe('#crud-typeorm', () => {
       });
       it('should not return cached value while updating', async () => {
         const dto = { name: { last: 'nameHasBeenUpdated' } };
-        const updateUser = () =>
-          request(server)
-            .put('/companies/2/users/17')
-            .send(dto);
+        const updateUser = () => request(server).put('/companies/2/users/17').send(dto);
 
         const query = qb.select(['name.last']).query();
         const getUserCachedAfterUpdate = () =>
-          request(server)
-            .get('/companies/2/users/17')
-            .query(query);
+          request(server).get('/companies/2/users/17').query(query);
 
         const resBeforeUpdateGetUser = await getUserCachedAfterUpdate().expect(200);
         expect(resBeforeUpdateGetUser.body.name.last).toBe(null);

@@ -1,6 +1,7 @@
 export * from './crud/crud-routes.factory';
 export * from './decorators';
 export * from './enums';
+export * from './ex';
 export * from './interfaces';
 export * from './types';
 export * from './module';
