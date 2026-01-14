@@ -38,7 +38,6 @@ steps:
     image: ${{BASE_IMAGE}}
     working_directory: ${{CF_REPO_NAME}}
     commands:
-      - configure-git-user
       - cp ci/.npmrc .npmrc
       - yarn install
       - yarn bootstrap
