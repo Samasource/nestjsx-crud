@@ -73,9 +73,10 @@ steps:
     image: ${{BASE_IMAGE}}
     working_directory: ${{CF_REPO_NAME}}
     commands:
+      - echo "NPM_REGISTRY_URL: ${NPM_REGISTRY_URL}"
+      - echo "PRERELEASE_ID: ${PRERELEASE_ID}"
+      - git config url."https://${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
       - npx lerna publish prerelease --registry=${NPM_REGISTRY_URL} --preid=${PRERELEASE_ID} --dist-tag=pr --no-git-tag-version --no-push --force-publish --yes
-      - export PREVIEW_VERSION=$(node -p "require('./lerna.json').version")
-      - export PACKAGES=$(npx lerna list | awk -v ver="${PREVIEW_VERSION}" '{printf "%s@%s<br>", $0, ver}'); cf_export PACKAGES
     stage: publish
 
   comment_pr:
