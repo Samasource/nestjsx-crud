@@ -1,7 +1,7 @@
 {
   "name": "@sama/nestjsx-crud",
   "description": "NestJs CRUD for RESTful APIs",
-  "version": "6.1.0",
+  "version": "6.1.1",
   "license": "MIT",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -36,8 +36,8 @@
     "build": "npx tsc -b"
   },
   "dependencies": {
-    "@sama/nestjsx-crud-request": "^6.1.0",
-    "@sama/nestjsx-crud-util": "^6.1.0",
+    "@sama/nestjsx-crud-request": "^6.1.1",
+    "@sama/nestjsx-crud-util": "^6.1.1",
     "deepmerge": "^3.2.0",
     "pluralize": "^8.0.0"
   },
