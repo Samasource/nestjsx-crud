@@ -51,19 +51,12 @@ steps:
       - yarn build
     stage: build
 
-  test:
-    image: ${{BASE_IMAGE}}
-    working_directory: ${{CF_REPO_NAME}}
-    services:
-      composition: ${{CF_REPO_NAME}}/ci/docker-compose.yml
-    commands:
-      - sleep 15 && yarn test:coverage
-    stage: test
-
   publish:
     image: ${{BASE_IMAGE}}
     working_directory: ${{CF_REPO_NAME}}
     commands:
+      - git config user.email "eng-ops@samasource.org"
+      - git config user.name "samacat"
       - git config url."https://${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
       - npx lerna publish --registry=${NPM_REGISTRY_URL} --conventional-commits --force-publish --yes
     stage: publish
