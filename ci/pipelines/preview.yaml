@@ -9,14 +9,13 @@ stages:
   - build
   - test
   - publish
-  - notify
 
 steps:
   check_vars:
     image: *INFRA_IMAGE
     working_directory: ${{CF_REPO_NAME}}
     commands:
-      - chk-var CF_REPO_OWNER CF_REPO_NAME CF_BRANCH CF_PULL_REQUEST_NUMBER
+      - chk-var CF_REPO_OWNER CF_REPO_NAME CF_BRANCH
       - chk-var GEMFURY_PUSH_TOKEN NPM_REGISTRY_URL
     stage: validate
 
@@ -33,7 +32,6 @@ steps:
       - export PATH=/codefresh/volume/bin:$PATH; cf_export PATH
       - export NODE_VERSION=$(get-major-version $(cat .nvmrc))
       - cf_export BASE_IMAGE=node:${NODE_VERSION}
-      - cf_export PRERELEASE_ID="PR-${CF_PULL_REQUEST_NUMBER}-$(date +%s)"
     stage: prepare
 
   install:
@@ -62,29 +60,10 @@ steps:
       - sleep 15 && yarn test:coverage
     stage: test
 
-  cleanup_preview:
-    image: *INFRA_IMAGE
-    working_directory: ${{CF_REPO_NAME}}
-    commands:
-      - fury-delete-preview ${{CF_PULL_REQUEST_NUMBER}}
-    stage: publish
-
   publish:
     image: ${{BASE_IMAGE}}
     working_directory: ${{CF_REPO_NAME}}
     commands:
-      - echo "NPM_REGISTRY_URL: ${NPM_REGISTRY_URL}"
-      - echo "PRERELEASE_ID: ${PRERELEASE_ID}"
       - git config url."https://${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
-      - npx lerna publish prerelease --registry=${NPM_REGISTRY_URL} --preid=${PRERELEASE_ID} --dist-tag=pr --no-git-tag-version --no-push --force-publish --yes
+      - npx lerna publish --registry=${NPM_REGISTRY_URL} --conventional-commits --force-publish --yes
     stage: publish
-
-  comment_pr:
-    type: kostis-codefresh/github-pr-comment
-    fail_fast: false
-    arguments:
-      PR_COMMENT_TEXT: |-
-        **Preview packages deployed**
-        ${{PACKAGES}}
-      GIT_PROVIDER_NAME: github-1
-    stage: notify
