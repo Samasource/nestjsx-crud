@@ -64,8 +64,7 @@ steps:
     image: ${{BASE_IMAGE}}
     working_directory: ${{CF_REPO_NAME}}
     commands:
-      - install-git-ssh-key
       - configure-git-user
-      - configure-git-ssh-url
+      - configure-git-token
       - npx lerna publish --registry=${NPM_REGISTRY_URL} --conventional-commits --force-publish --yes
     stage: publish
