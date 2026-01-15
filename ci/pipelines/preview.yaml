@@ -79,7 +79,7 @@ steps:
     stage: publish
 
   comment_pr:
-    type: kostis-codefresh/github-pr-comment
+    type: samasource/github-pr-comment
     fail_fast: false
     arguments:
       PR_COMMENT_TEXT: |-
